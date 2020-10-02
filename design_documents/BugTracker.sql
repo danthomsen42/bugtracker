@@ -42,7 +42,8 @@ CREATE TABLE `Permission_Level_Table` (
 CREATE TABLE `Organization_Table` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `organizationName` text NOT NULL,
-  `organizationInternalNumber` int AUTO_INCREMENT DEFAULT 1024
+  `organizationInternalNumber` int AUTO_INCREMENT DEFAULT 1024,
+  `organizationLogo` longtext NOT NULL
 );
 
 CREATE TABLE `Team_Table` (
@@ -97,13 +98,14 @@ CREATE TABLE `Bug_Table` (
   `bugDescription` longtext NOT NULL,
   `bugStatusID` int,
   `dateBugFound` date,
-  `dateBugStatusAssigned` date
+  `dateBugStatusAssigned` date,
+  `nextSteps` longtext NOT NULL
 );
 
 CREATE TABLE `Step_Log_Table` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `bugIndexID` int,
-  `steps` longtext NOT NULL,
+  `stepsLogged` longtext NOT NULL,
   `dateTimeAdded` date
 );
 
