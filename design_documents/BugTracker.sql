@@ -104,9 +104,16 @@ CREATE TABLE `Bug_Table` (
 
 CREATE TABLE `Step_Log_Table` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `bugIndexID` int,
+  `bugID` int,
   `stepsLogged` longtext NOT NULL,
   `dateTimeAdded` date
+);
+
+CREATE TABLE `Access_to_Project_and_Bugs_Table` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `UserID` int,
+  `ProjectID` int,
+  `bugID` int
 );
 
 ALTER TABLE `Bug_Status_Table` ADD FOREIGN KEY (`languageID`) REFERENCES `Language_Table` (`id`);
@@ -163,4 +170,10 @@ ALTER TABLE `Bug_Table` ADD FOREIGN KEY (`danger`) REFERENCES `Bug_Nature_Table`
 
 ALTER TABLE `Bug_Table` ADD FOREIGN KEY (`bugStatusID`) REFERENCES `Bug_Status_Table` (`id`);
 
-ALTER TABLE `Step_Log_Table` ADD FOREIGN KEY (`bugIndexID`) REFERENCES `Bug_Table` (`id`);
+ALTER TABLE `Step_Log_Table` ADD FOREIGN KEY (`bugID`) REFERENCES `Bug_Table` (`id`);
+
+ALTER TABLE `Access_to_Project_and_Bugs_Table` ADD FOREIGN KEY (`UserID`) REFERENCES `User_Table` (`id`);
+
+ALTER TABLE `Access_to_Project_and_Bugs_Table` ADD FOREIGN KEY (`ProjectID`) REFERENCES `Project_List_Table` (`id`);
+
+ALTER TABLE `Access_to_Project_and_Bugs_Table` ADD FOREIGN KEY (`bugID`) REFERENCES `Bug_Table` (`id`);
