@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="../styles/bugsubmission.css">
+    <link rel="stylesheet" href="../styles/bugsubmission.css">
     <script>
         var loadFile = function(event) {
             var image = document.getElementById('output');
@@ -37,32 +37,32 @@
     </header>
 
     <div id="CompanyOrPersonal">
-            <span>Company</span>
-            <!--filler link-->
-            <span>Personal</span>
-            <!--filler link-->
+        <span>Company</span>
+        <!--filler link-->
+        <span>Personal</span>
+        <!--filler link-->
 
     </div>
-<div id="organize">
-    <div id="ProjectList">
+    <div id="organize">
+        <div id="ProjectList">
 
 
-        
+
+        </div>
+
+        <form id="bugInfo">
+            <figure id="bugImage">
+                <!--        <img src="../images/Generic_error_message.png">  From https://commons.wikimedia.org/wiki/File:Generic_error_message.png-->
+                <img id="output" width="200" height="200" />
+                <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+                <p><label for="file" style="cursor: pointer;">Click to upload Bug Image</label></p>
+
+            </figure>
+
+            <textarea id="bugDescription" rows="6" cols="60"></textarea>
+
+
+        </form>
+
     </div>
-
-    <form id="bugInfo">
-        <figure id="bugImage">
-            <!--        <img src="../images/Generic_error_message.png">  From https://commons.wikimedia.org/wiki/File:Generic_error_message.png-->
-            <img id="output" width="200" height="200" />
-            <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-            <p><label for="file" style="cursor: pointer;">Click to upload Bug Image</label></p>
-
-        </figure>
-
-<textarea id="bugDescription" rows="6" cols="60"></textarea>
-        
-        
-    </form>
-
-</div>
 </body>
