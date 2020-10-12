@@ -11,6 +11,8 @@
             var image = document.getElementById('output');
             image.src = URL.createObjectURL(event.target.files[0]);
         };
+        //window.onload=function(){
+        //        }
     </script>
 
 </head>
@@ -62,7 +64,23 @@
             <textarea id="bugDescription" rows="6" cols="60"></textarea>
 
 
-        </form>
+            <script>
+                //document.getElementById("save").onclick = function() {saveBugDescription()};
 
+                function saveBugDescription() {
+                    var keyname = 'Value' + localStorage.length;
+                    //localStorage.setItem(keyname, value);
+                    var bugDescription = document.getElementById("bugDescription").value;
+                    localStorage.setItem(keyname, bugDescription);
+                    console.log("saved description");
+
+                    var storedValue = localStorage.getItem(keyname);
+                    console.log(storedValue);
+                    //alert(storedValue);
+                }
+            </script>
+
+        </form>
+        <button id="save" onclick="saveBugDescription()">Submit Bug</button>
     </div>
 </body>
