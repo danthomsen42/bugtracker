@@ -53,17 +53,73 @@
         </div>
 
         <form id="bugInfo">
-            <figure id="bugImage">
-                <!--        <img src="../images/Generic_error_message.png">  From https://commons.wikimedia.org/wiki/File:Generic_error_message.png-->
-                <img id="output" width="200" height="200" />
-                <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
-                <p><label for="file" style="cursor: pointer;">Click to upload Bug Image</label></p>
+            <div id="row1">
+                <figure id="bugImage">
+                    <!--        <img src="../images/Generic_error_message.png">  From https://commons.wikimedia.org/wiki/File:Generic_error_message.png-->
+                    <img id="output" />
+                    <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;">
+                    <p><label for="file" style="cursor: pointer;">Click to upload Bug Image</label></p>
 
-            </figure>
+                </figure>
 
-            <textarea id="bugDescription" rows="6" cols="60"></textarea>
+                <textarea id="bugDescription" rows="6" cols="60"></textarea>
+            </div>
+            <!--            <br><br>-->
+            <div id="row2">
+                <textarea id="bugLocation" rows="3" cols="10"></textarea>
 
+                <div id="selections">
+                    <select id="bugNature" name="nature" class="selection">
+                        <option id="defaultValue" value=0>Bug Nature</option>
+                        <option value=1>Performance</option>
+                        <option value=2>Functional</option>
+                        <option value=3>Graphical/Visual</option>
+                        <option value=4>Wording/Content</option>
+                        <option value=5>Ergonomic</option>
+                        <option value=6>Security</option>
+                        <option value=7>Fatal/Crash</option>
+                    </select>
 
+                    <select id="bugFindability" name="findability" class="selection">
+                        <option id="defaultValue" value=0>Findability</option>
+                        <option value=1>Low</option>
+                        <option value=2>Mid-Low</option>
+                        <option value=3>Mid</option>
+                        <option value=4>Mid-High</option>
+                        <option value=5>High</option>
+                    </select>
+
+                    <select id="bugExploitability" name="Exploitability" class="selection">
+                        <option id="defaultValue" value=0>Exploitability</option>
+                        <option value=1>Low</option>
+                        <option value=2>Mid-Low</option>
+                        <option value=3>Mid</option>
+                        <option value=4>Mid-High</option>
+                        <option value=5>High</option>
+                    </select>
+
+                    <select id="bugDanger" name="danger" class="selection">
+                        <option id="defaultValue" value=0>Danger</option>
+                        <option value=1>Low</option>
+                        <option value=2>Mid-Low</option>
+                        <option value=3>Mid</option>
+                        <option value=4>Mid-High</option>
+                        <option value=5>High</option>
+                    </select>
+
+                </div>
+                <figure id="risk">
+                    <img id="output" />
+                </figure>
+            </div>
+            <div id="row3">
+                <textarea id="bugNextSteps" rows="6" cols="60"></textarea>
+                <textarea id="bugExtraNotes" rows="5" cols="20"></textarea>
+            </div>
+            <div id="row4">
+                <textarea id="bugLogSection" rows="6" cols="60"></textarea>
+                <button id="save" onclick="saveBugDescription()">Submit Bug</button>
+            </div>
             <script>
                 //document.getElementById("save").onclick = function() {saveBugDescription()};
 
@@ -81,6 +137,6 @@
             </script>
 
         </form>
-        <button id="save" onclick="saveBugDescription()">Submit Bug</button>
+
     </div>
 </body>

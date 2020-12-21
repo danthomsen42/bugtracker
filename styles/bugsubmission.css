@@ -11,76 +11,196 @@ body {
     height: 100%;
 }
 
-header{
+header {
     width: 100%;
-/*    height: 100%;*/
+    /*    height: 100%;*/
     border-bottom-style: solid;
     border-bottom-color: black;
 }
 
-#logos{
+#logos {
     width: 50%;
     margin-left: 1.5%;
     padding-bottom: 1%;
     padding-top: 1%;
 }
 
-.column{
-  float: left;
-  width: 33.33%;
+.column {
+    float: left;
+    width: 33.33%;
 }
 
-#logos::after{
-  content: "";
-  clear: both;
-  display: table;
+#logos::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-#rightHeaderTabs{
+#rightHeaderTabs {
     right: 1%;
     position: absolute;
     top: 2%;
 }
 
-#CompanyOrPersonal{
-   width: 95%;
-   margin: auto;
-   margin-top: 1%;
-   margin-bottom: 1%;
-   padding: 1%;
-   text-align: center;
-   background-color: #a886b8;
-    
+#CompanyOrPersonal {
+    width: 95%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+    text-align: center;
+    background-color: #a886b8;
+
 }
 
-#CompanyOrPersonal span{
+#CompanyOrPersonal span {
     padding: 10%;
 }
 
-#organize{
+#organize {
     display: flex;
+    height: 100%;
+    /*    flex-wrap: wrap;*/
 }
 
-#ProjectList{
-   width: 10%;
-   margin-left: 1.5%;
-   padding: 2%;
-   padding-bottom: 25%;
-   text-align: left;
-   background-color: grey;
+#ProjectList {
+    width: 10%;
+    height: 100%;
+    margin-left: 1.5%;
+    padding: 2%;
+    padding-bottom: 25%;
+    text-align: left;
+    background-color: grey;
     position: relative;
 }
 
-#bugInfo{
-    width: 81.5%;
+#row1 {
+    position: relative;
     display: flex;
+    justify-content: space-between;
+/*    border: solid;*/
+    height: 30%;
+}
+
+#bugInfo {
+    width: 81.5%;
+    /*    display: flex;*/
     position: relative;
     margin-left: 1.5%;
     background-color: grey;
 }
 
-#bugDescription{
+#bugImage {
+    /*    position: relative;*/
+    width: 15%;
+    height: 100%;
+    border: solid;
+}
+
+#bugDescription {
+    /*    position: absolute;*/
+    top: 0%;
+    left: 15%;
     width: 80%;
-    height: 40%;
+    height: 100%;
     margin-left: 2.5%;
+    border: solid;
+}
+
+#row2 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+/*    border: solid;*/
+    height: 15%;
+    margin-top: 2%;
+}
+
+#bugLocation {
+    width: 10%;
+    height: 100%;
+    border: solid;
+    margin-left: 2.5%;
+}
+
+#selections {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 25%;
+    /*    margin-left: 2%;*/
+    margin-top: 2%
+}
+
+.selection {
+    width: 20%;
+    height: 150%;
+    border: solid;
+}
+
+#defaultValue {
+    text-decoration: underline;
+}
+
+#risk {
+    justify-content: flex-end;
+    /*    position: absolute;*/
+    margin-right: 2.5%;
+    width: 10%;
+    height: 100%;
+    border: solid;
+}
+
+#row3 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+/*    border: solid;*/
+    height: 30%;
+    margin-top: 2%;
+}
+
+#bugNextSteps {
+    top: 0%;
+    left: 15%;
+    width: 80%;
+    height: 100%;
+    border: solid;
+    /*    margin-left: 2.5%;*/
+}
+
+#bugExtraNotes {
+    height: 100%;
+    bottom: 0%;
+    width: 15%;
+/*    align-self: flex-end;*/
+    border: solid;
+
+}
+
+#row4 {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+/*    border: solid;*/
+    height: 20%;
+    margin-top: 2%;
+}
+
+#bugLogSection{
+        height: 100%;
+    bottom: 0%;
+    width: 80%;
+/*    align-self: flex-end;*/
+    border: solid;
+}
+
+#save {
+    width: 10%;
+    height: 30%;
+    align-self: center;
+    margin-right: 2.5%;
+    background-color: deepskyblue;
+    
+/*    position: relative;*/
 }
