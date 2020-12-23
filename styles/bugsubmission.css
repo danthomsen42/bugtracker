@@ -8,7 +8,8 @@ body {
     margin: 0px;
     background-color: white;
     color: black;
-    height: 100%;
+/*    height: 110%;*/
+    font-size: 100%;
 }
 
 header {
@@ -59,13 +60,13 @@ header {
 
 #organize {
     display: flex;
-    height: 100%;
+    height: 200%;
     /*    flex-wrap: wrap;*/
 }
 
 #ProjectList {
     width: 10%;
-    height: 100%;
+/*    height: 100em;*/
     margin-left: 1.5%;
     padding: 2%;
     padding-bottom: 25%;
@@ -201,6 +202,7 @@ header {
     align-self: center;
     margin-right: 2.5%;
     background-color: deepskyblue;
+    font-size: 80%;
     
 /*    position: relative;*/
 }
