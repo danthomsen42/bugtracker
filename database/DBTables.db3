@@ -1,0 +1,172 @@
+-- Table: Organization
+CREATE TABLE Organization (
+  org_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  org_name TEXT NOT NULL
+  org_internal_number TEXT NOT NULL
+  org_logo TEXT --path to where the logo is stored
+  student_org INTEGER NOT NULL --Boolean value to indicate whether the organization is a student organization for pricing reasons
+  date_time_created TEXT NOT NULL
+  date_last_modified TEXT NOT NULL
+);
+
+-- Table: Permissions_Level
+CREATE TABLE Permissions_Level (
+  perm_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  perm_name TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: User
+CREATE TABLE User (
+  user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  user_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  job_title TEXT NOT NULL,
+  org_id INTEGER,
+  team_id INTEGER,
+  perm_id INTEGER,
+  lang_id INTEGER,
+  hashed_pwd TEXT NOT NULL,
+  date_time_created TEXT NOT NULL,
+  date_last_modified TEXT NOT NULL,
+  student TEXT NOT NULL,
+  FOREIGN KEY (org_id) REFERENCES Organization(org_id),
+  FOREIGN KEY (team_id) REFERENCES Team(team_id),
+  FOREIGN KEY (perm_id) REFERENCES Permissions_Level(perm_id),
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Project
+CREATE TABLE Project (
+  project_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  org_id INTEGER,
+  perm_id INTEGER,
+  user_id INTEGER,
+  Personal_Project INTEGER,
+  project_name TEXT NOT NULL,
+  priority_id INTEGER,
+  status_id INTEGER,
+  date_time_created TEXT,
+  date_last_modified TEXT,
+  project_description TEXT,
+  FOREIGN KEY (org_id) REFERENCES Organization(org_id),
+  FOREIGN KEY (perm_id) REFERENCES Permissions_Level(perm_id),
+  FOREIGN KEY (user_id) REFERENCES User(user_id),
+  FOREIGN KEY (priority_id) REFERENCES Priority_Table(priority_id),
+  FOREIGN KEY (status_id) REFERENCES Project_Status_Table(status_id)
+);
+
+-- Table: Language
+CREATE TABLE Language (
+  lang_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_name TEXT NOT NULL
+);
+
+-- Table: Priority_Table
+CREATE TABLE Priority_Table (
+  priority_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  priority_type TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Project_Status_Table
+CREATE TABLE Project_Status_Table (
+  status_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  status_name TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Team_Table
+CREATE TABLE Team (
+  team_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  team_name TEXT NOT NULL
+);
+
+-- Table: Bug_Table
+CREATE TABLE Bug (
+  bug_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  project_id INTEGER,
+  user_id INTEGER,
+  team_id INTEGER,
+  bug_name TEXT NOT NULL, --can also be a summary as, unless you're an Entomologist, you're not likely to name your bugs
+  bug_nature INTEGER,
+  assigned_bug_priority INTEGER,
+  recommended_bug_priority INTEGER,
+  findability INTEGER,
+  exploitability INTEGER,
+  danger INTEGER,
+  bug_location TEXT NOT NULL,
+  bug_description TEXT NOT NULL,
+  bug_status INTEGER,
+  date_bug_found TEXT NOT NULL, --datetime
+  date_bug_status_assigned TEXT NOT NULL, --datetime
+  next_steps TEXT NOT NULL,
+  extra_notes TEXT,
+  FOREIGN KEY (project_id) REFERENCES Project(project_id),
+  FOREIGN KEY (bug_nature) REFERENCES Bug_Nature(bug_nature_id),
+  FOREIGN KEY (assigned_bug_priority) REFERENCES Priority_Table(priority_id),
+  FOREIGN KEY (recommended_bug_priority) REFERENCES Priority_Table(priority_id),
+  FOREIGN KEY (findability) REFERENCES Ratings(ratings_id),
+  FOREIGN KEY (exploitability) REFERENCES Ratings(ratings_id),
+  FOREIGN KEY (danger) REFERENCES Ratings(ratings_id),
+  FOREIGN KEY (bug_status) REFERENCES Bug_Status(bug_status_id),
+
+);
+
+-- Table: Bug_Nature_Table
+CREATE TABLE Bug_Nature (
+  bug_nature_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  nature TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Ratings_Table
+CREATE TABLE Ratings (
+  ratings_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  ratings_description TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Bug_Status_Table
+CREATE TABLE Bug_Status (
+  bug_status_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lang_id INTEGER,
+  status TEXT NOT NULL,
+  FOREIGN KEY (lang_id) REFERENCES Language(lang_id)
+);
+
+-- Table: Step_Log_Table
+CREATE TABLE Step_Log_Table (
+  step_log_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  bug_id INTEGER NOT NULL,
+  steps_logged TEXT NOT NULL, -- This will contain a concatenated version of changes made in each bug. Basically, it will show all changes made to the bug report with their date and time in a singular "blob" of text organized, but not seperated
+  date_logged TEXT NOT NULL,
+  FOREIGN KEY (bug_id) REFERENCES Bug(bug_id)
+);
+
+-- Table: Bug_Picture_Table
+CREATE TABLE Bug_Picture (
+  bug_picture_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  bug_id INTEGER, NOT NULL
+  bug_picture_path TEXT NOT NULL, --Path to wherever the pictures are stored, might include video files as well
+  FOREIGN KEY (bug_id) REFERENCES Bug(bug_id)
+);
+
+-- Table: Access_to_Projects_and_Bugs
+CREATE TABLE Access (
+  Access_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER,
+  project_id INTEGER,
+  bug_id INTEGER,
+  FOREIGN KEY (project_id) REFERENCES Project(project_id), 
+  FOREIGN KEY (user_id) REFERENCES User(user_id),
+  FOREIGN KEY (project_id) REFERENCES Project_List(project_id)
+  FOREIGN KEY (bug_id) REFERENCES Bug(bug_id)
+);
