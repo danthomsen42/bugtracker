@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="logos">
+            <div id="BugTrackerLogo">
+                <img src="./pictures/logoipsum-284.svg">
+            </div>
+            <div id="CompanyLogo">
+                <img src="./pictures/logoipsum-297.svg">
+            </div>
+        </div>
+        <div id="headerRight">
+            <div id="links">
+                <a href="">About Us</a>
+                <a href="">Contact Us</a>
+                <a href="guide.html">Guide</a>
+                <a href="">Support</a>
+                <a href="">Sign Out</a>
+                <div id="searchbar">
+                    <form id="searchform">
+                        <input type="search" id="query" name="q" placeholder="Search...">
+                        <button class="where" style="color:black;">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="companyVSpersonal">
+        <button id="button1" class="active">Button 1</button>
+        <button id="button2">Button 2</button>
+    </div>
+    <div id="content">
+        <div id="sideSection"></div>
+        <div id="bugSection1">
+            <div id="pictureCarousel"></div>
+            <div id="bugDescription">
+                <textarea id="bugDescriptionTextInput" placeholder="Bug Description..."></textarea>
+            </div>
+        </div>
+        <div id="bugSection2">
+            <div id="bugLocation">
+                <textarea id="bugLocationTextInput" placeholder="Bug Location Notes..."></textarea>
+            </div>
+            <div id="bugDropDowns">
+                <div id="bugNature"></div>
+                <div id="bugDanger"></div>
+                <div id="bugFindability"></div>
+                <div id="bugExploitability"></div>
+            </div>
+            <div id="bugDisplayRisk"></div>
+        </div>
+        <div id="bugSection3">
+            <div id="bugNextSteps">
+                <textarea id="bugNextStepsTextInput" placeholder="Next steps to be taken..."></textarea>
+            </div>
+
+            <div id="bugExtraNotes">
+                <textarea id="bugExtraNotesTextInput" placeholder="Extra Notes..."></textarea>
+            </div>
+        </div>
+        <div id="bugSection4">
+            <div id="logs">
+            </div>
+            <div id="submitBugChange">
+                <button id="submitBugChangeButton"style="color:black;">Submit/Update</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

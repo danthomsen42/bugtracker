@@ -1,0 +1,295 @@
+header {
+    border: 1px solid black;
+    display: inline-flex;
+    margin: 1%;
+    padding: 1%;
+    width: 95%;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: #777;
+}
+
+#companyVSpersonal {
+    margin: 1%;
+    background-color: #333;
+    /* padding: 1%; */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    /* width: 5%; */
+}
+
+#logos {
+  /* border: 1px solid green; */
+    display: inline-flex;
+    padding: 1%;
+    height: 10%;
+    width: 50%;
+}
+#BugTrackerLogo {
+    /* display: flex; */
+    /* display: inline-flex; */
+    justify-content: left;
+    padding-right: 10%;
+    width: 5%;
+}
+#CompanyLogo{
+    display: flex;
+    /* padding-left: 20%; */
+    
+}
+#headerRight {
+    width: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: right;
+    padding-right: 1%;
+    /* padding-left: 80%; */
+}
+
+#searchbar {
+  display: flex;
+  /* float: right; */
+  /* padding: 6px; */
+  /* border: none; */
+  margin-top: 5%;
+  /* margin-right: 16px; */
+  font-size: 17px;
+  /* display: flex-end; */
+  justify-content: right;
+  color:black;
+}
+
+#content {
+  width: 95%;
+  /* height: 50rem; */
+  resize: both;
+  overflow: auto;
+  height: 50em;
+  border: 1px solid black;
+  /* display: flexbox; */
+  /* display: grid; */
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 2%;
+}
+
+#sideSection{
+  margin: 1%;
+  /* display: flex; */
+  float:left;
+  width: 15%;
+  height: 77%;
+  border: 1px solid green;
+  resize: both;
+  overflow: auto;
+}
+
+#bugSection1{
+  border: 1px solid blueviolet;
+  float:left;
+  width: 80%;
+  height: 25%;
+  margin: 1%;
+  resize: both;
+  overflow: auto;
+}
+
+#pictureCarousel{
+  border: 1px solid blue;
+  float:left;
+  width: 25%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugDescription{
+  border: 1px solid orange;
+  float:left;
+  width: 70%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugDescriptionTextInput{
+  width: 95%;
+  height: 95%;
+}
+
+
+#bugSection2{
+  border: 1px solid blueviolet;
+  float:left;
+  width: 80%;
+  height: 15%;
+  margin: 1%;
+  resize: both;
+  overflow: auto;
+}
+
+#bugLocation{
+  border: 1px solid blue;
+  float:left;
+  width: 25%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugLocationTextInput{
+  width: 95%;
+  height: 95%;
+}
+
+#bugDropDowns{
+  border: 1px solid lawngreen;
+  float:left;
+  width: 45%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugNature{
+  border: 1px solid green;
+  float:left;
+  width: 20%;
+  height: 20%;
+  margin: 2%;  
+  resize: both;
+  overflow: auto;
+  
+}
+
+#bugDanger{
+  border: 1px solid green;
+  float:left;
+  width: 20%;
+  height: 20%;
+  margin: 2%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugFindability{
+  border: 1px solid green;
+  float:left;
+  width: 20%;
+  height: 20%;
+  margin: 2%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugExploitability{
+  border: 1px solid green;
+  float:left;
+  width: 20%;
+  height: 20%;
+  margin: 2%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugDisplayRisk{
+  border: 1px solid blue;
+  float:left;
+  width: 20%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugSection3{
+  border: 1px solid blueviolet;
+  float:left;
+  width: 80%;
+  height: 20%;
+  margin: 1%;
+  resize: both;
+  overflow: auto;
+}
+
+#bugNextSteps{
+  border: 1px solid orange;
+  float:left;
+  width: 70%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugNextStepsTextInput{
+  width: 95%;
+  height: 95%;
+}
+
+#bugExtraNotes{
+  border: 1px solid blue;
+  float:left;
+  width: 20%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#bugExtraNotesTextInput{
+  width: 95%;
+  height: 95%;  
+}
+
+#bugSection4{
+  border: 1px solid blueviolet;
+  float:left;
+  width: 80%;
+  height: 10%;
+  margin: 1%;
+  resize: both;
+  overflow: auto;
+}
+
+#logs{
+  border: 1px solid orange;
+  float:left;
+  width: 70%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+
+#submitBugChange{
+  border: 1px solid blue;
+  float:left;
+  width: 20%;
+  height: 85%;
+  margin: 1%;  
+  resize: both;
+  overflow: auto;
+}
+#submitBugChangeButton{
+  border: 1px solid blue;
+}
+.where{
+  border: 1px solid red;
+}
