@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+
+</head>
+
+<body>
+    <header>
+        <div id="logos">
+            <div id="BugTrackerLogo">
+                <img src="{{ url_for('static', filename='pictures/logoipsum-284.svg') }}">
+            </div>
+            <div id="CompanyLogo">
+                <img src="{{ url_for('static', filename='pictures/logoipsum-297.svg') }}">
+            </div>
+        </div>
+        <div id="headerRight">
+            <div id="links">
+                <a href="">About Us</a>
+                <a href="">Contact Us</a>
+                <a href="guide.html">Guide</a>
+                <a href="">Support</a>
+                <a href="">Sign Out</a>
+                <div id="searchbar">
+                    <form id="searchform">
+                        <input type="search" id="query" name="q" placeholder="Search...">
+                        <button class="where" style="color:black;">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="companyVSpersonal">
+        <button id="button1" class="active">Button 1</button>
+        <button id="button2">Button 2</button>
+    </div>
+    <form>
+    <div id="content">
+        <!-- <form> -->
+            <div id="sideSection"></div>
+            <div id="bugSection1">
+                <div id="pictureCarousel">
+                    <div id="pictures"></div>
+                    <div id="uploadPictures">
+                        <button style="color: #000;">Upload Pictures</button>
+                    </div>
+                </div>
+                <div id="bugDescription">
+                    <textarea id="bugDescriptionTextInput" placeholder="Bug Description..."></textarea>
+                </div>
+            </div>
+            <div id="bugSection2">
+                <div id="bugLocation">
+                    <textarea id="bugLocationTextInput" placeholder="Bug Location Notes..."></textarea>
+                </div>
+                <div id="bugDropDowns">
+                    <div id="bugNature">
+                        <select name="Nature" id="Nature" style="color:black;">
+                            {% for rating in ratings %}
+                            <option value="{{ rating[0] }}" style="color:black;">{{ rating[0] }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </div>
+                    <div id="bugDanger">
+                        <select name="Danger" id="Danger">
+                            {% for rating in ratings %}
+                            <option value="{{ rating[0] }}" style="color:black;">{{ rating[0] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div id="bugFindability">
+                        <select name="Findability" id="Findability">
+                            {% for rating in ratings %}
+                            <option value="{{ rating[0] }}" style="color:black;">{{ rating[0] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div id="bugExploitability">
+                        <select name="Exploitability" id="Exploitability">
+                            {% for rating in ratings %}
+                            <option value="{{ rating[0] }}" style="color:black;">{{ rating[0] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div id="bugDisplayRisk"></div>
+            </div>
+            <div id="bugSection3">
+                <div id="bugNextSteps">
+                    <textarea id="bugNextStepsTextInput" placeholder="Next steps to be taken..."></textarea>
+                </div>
+
+                <div id="bugExtraNotes">
+                    <textarea id="bugExtraNotesTextInput" placeholder="Extra Notes..."></textarea>
+                </div>
+            </div>
+            <div id="bugSection4">
+                <div id="logs">
+                    <label id="logareaLabel">Logs</label>
+                    <textarea readonly id="logarea"></textarea>
+                </div>
+                <div id="submitBugChange">
+                    <button id="submitBugChangeButton" style="color:black;">Submit/Update</button>
+                </div>
+            </div>
+        <!-- </form> -->
+    </div>
+</form>
+
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+
+</html>
